@@ -1,0 +1,50 @@
+[package]
+name = "monster-siren"
+version = "1.0.0"
+description = "Monster Siren Records desktop player"
+authors = ["MonsterSirenPlayer"]
+edition = "2021"
+rust-version = "1.77"
+
+[lib]
+name = "monster_siren_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", default-features = false, features = [
+  "rustls-tls",
+] }
+base64 = "0.22"
+encoding_rs = "0.8"
+
+[target.'cfg(windows)'.dependencies]
+# 枚举系统字体家族（DirectWrite），供设置页的字体选择器使用。
+windows = { version = "0.61", features = ["Win32_Graphics_DirectWrite", "Win32_System_SystemInformation"] }
+
+[features]
+# 生产构建开启：把前端产物嵌入二进制（`tauri build` 会自动带上这个 feature）。
+# 直接 `cargo build --release` 时必须手动加 `--features custom-protocol`，
+# 否则会按开发模式去加载 devUrl。
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.dev]
+# 依赖里的 C 代码（ring 等）在部分 Windows 机器上会因为 /Z7 调试记录被安全软件
+# 拦截而报 "cl.exe D8050 cannot execute c1.dll: failed to get command line into
+# debug records"。关掉依赖的调试符号（本项目自己的代码仍保留）即可绕开，
+# 同时也能明显加快 debug 构建。
+[profile.dev.package."*"]
+debug = false
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

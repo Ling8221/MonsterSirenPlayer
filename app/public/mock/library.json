@@ -1,0 +1,170 @@
+{
+  "albums": [
+    { "cid": "9374", "name": "花街迎春", "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/fa6b1ffb7b95f13f6a2adb58a0422cb5.jpg", "artistes": ["塞壬唱片-MSR"] },
+    { "cid": "2442", "name": "辞岁行OST", "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/f7770f042ceffd81625333a79c8b34e5.jpg", "artistes": ["塞壬唱片-MSR"] },
+    { "cid": "4509", "name": "无名策", "coverUrl": "https://web.hycdn.cn/siren/pic/20260209/9ac6729658ff746a0efea3794d4c73e9.png", "artistes": ["塞壬唱片-MSR"] },
+    { "cid": "5190", "name": "铁花飞", "coverUrl": "https://web.hycdn.cn/siren/pic/20260208/464eada92f718ad5013e45c010b6a415.png", "artistes": ["Mili"] },
+    { "cid": "2444", "name": "无忧梦呓OST", "coverUrl": "https://web.hycdn.cn/siren/pic/20250905/2039eb5cf7f7d3a951d5f653c6d33f64.jpg", "artistes": ["塞壬唱片-MSR"] },
+    { "cid": "6655", "name": "Summer Calling", "coverUrl": "https://web.hycdn.cn/siren/pic/20260814/bd5609337e5947f5ecc71539b0edd43c.png", "artistes": ["塞壬唱片-MSR"] },
+    { "cid": "9377", "name": "Heavenly Me", "coverUrl": "https://web.hycdn.cn/siren/pic/20250430/c7d853aac1c2c5174fc3b900ca185ca1.jpg", "artistes": ["塞壬唱片-MSR", "AIYUE blessed : 理名"] },
+    { "cid": "1014", "name": "月明人间", "coverUrl": "https://web.hycdn.cn/siren/pic/20260924/e5e0325a016972b56f74de5554e814a2.png", "artistes": ["塞壬唱片-MSR"] },
+    { "cid": "8922", "name": "雪山降临1101 OST", "coverUrl": "https://web.hycdn.cn/siren/pic/20251104/920dbf50e9d1e90042d20b25345413d7.jpg", "artistes": ["塞壬唱片-MSR"] },
+    { "cid": "9369", "name": "时间啊，向前！", "coverUrl": "https://web.hycdn.cn/siren/pic/20261102/a0f25b1287570bfe96872019183b8edd.jpg", "artistes": ["塞壬唱片-MSR"] },
+    { "cid": "0239", "name": "明日方舟OST5", "coverUrl": "https://web.hycdn.cn/siren/pic/20250415/3ce2647bd143f6d49cf58a483e6c9aa8.png", "artistes": ["塞壬唱片-MSR"] },
+    { "cid": "6667", "name": "吾导先路OST", "coverUrl": "https://web.hycdn.cn/siren/pic/20230214/69f3a366cbaefe00bb779c993a8a24c9.jpg", "artistes": ["塞壬唱片-MSR"] }
+  ],
+  "details": {
+    "9374": {
+      "cid": "9374",
+      "name": "花街迎春",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/fa6b1ffb7b95f13f6a2adb58a0422cb5.jpg",
+      "artistes": ["塞壬唱片-MSR"],
+      "intro": "花街的灯火一直亮到天亮。今年的春信来得早，鼓点也敲得比往常更急一些。",
+      "songs": [
+        { "cid": "306871", "name": "花街迎春", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "697682", "name": "花街迎春 (Instrumental)", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "306872", "name": "铁花飞", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "232228", "name": "来者可追", "artistes": ["塞壬唱片-MSR"] }
+      ]
+    },
+    "2442": {
+      "cid": "2442",
+      "name": "辞岁行OST",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/f7770f042ceffd81625333a79c8b34e5.jpg",
+      "artistes": ["塞壬唱片-MSR"],
+      "intro": "辞旧岁，行远路。带着一年的风雪，也带着来年的灯火。",
+      "songs": [
+        { "cid": "880390", "name": "无名策", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "514509", "name": "无名策 (Instrumental)", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "461117", "name": "酹天问", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "048764", "name": "辞岁行", "artistes": ["塞壬唱片-MSR"] }
+      ]
+    },
+    "4509": {
+      "cid": "4509",
+      "name": "无名策",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260209/9ac6729658ff746a0efea3794d4c73e9.png",
+      "artistes": ["塞壬唱片-MSR"],
+      "intro": "没有署名的谋略，写在风里，也写在这片土地的沟壑之间。",
+      "songs": [
+        { "cid": "880391", "name": "The Way You Ignited the Sky", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "953942", "name": "回溸", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "048765", "name": "递归", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "779456", "name": "千岑屿", "artistes": ["塞壬唱片-MSR"] }
+      ]
+    },
+    "5190": {
+      "cid": "5190",
+      "name": "铁花飞",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260208/464eada92f718ad5013e45c010b6a415.png",
+      "artistes": ["Mili"],
+      "intro": "铁水泼向夜空的那一瞬，像把整座城的心跳都点亮了。",
+      "songs": [
+        { "cid": "953941", "name": "The Proclamation", "artistes": ["Mili"] },
+        { "cid": "125035", "name": "A Thousand Shattered Hopes", "artistes": ["Mili"] },
+        { "cid": "125036", "name": "Dance Of Athenius", "artistes": ["Mili"] },
+        { "cid": "779455", "name": "阳关已远", "artistes": ["Mili"] }
+      ]
+    },
+    "2444": {
+      "cid": "2444",
+      "name": "无忧梦呓OST",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20250905/2039eb5cf7f7d3a951d5f653c6d33f64.jpg",
+      "artistes": ["塞壬唱片-MSR"],
+      "intro": "梦是安全的，所以人愿意一直睡着；可总有人在梦里喊你的名字。",
+      "songs": [
+        { "cid": "232229", "name": "Slowly Flow, Hearthlight Glow (Instrumental)", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "514500", "name": "Slowly Flow, Hearthlight Glow", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "697684", "name": "Wanna Know Me? (Too Bad)", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "779457", "name": "Wanna Know Me (Too Bad) (Instrumental)", "artistes": ["塞壬唱片-MSR"] }
+      ]
+    },
+    "6655": {
+      "cid": "6655",
+      "name": "Summer Calling",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260814/bd5609337e5947f5ecc71539b0edd43c.png",
+      "artistes": ["塞壬唱片-MSR"],
+      "intro": "潮湿的风、冰镇的汽水，还有一个终于被接起的电话。",
+      "songs": [
+        { "cid": "125037", "name": "Just Another Inch Higher", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "779458", "name": "Just Another Inch Higher (Instrumental)", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "461119", "name": "Secret Escape", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "306874", "name": "Secret Escape (Instrumental)", "artistes": ["塞壬唱片-MSR"] }
+      ]
+    },
+    "9377": {
+      "cid": "9377",
+      "name": "Heavenly Me",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20250430/c7d853aac1c2c5174fc3b900ca185ca1.jpg",
+      "artistes": ["塞壬唱片-MSR", "AIYUE blessed : 理名"],
+      "intro": "抬起头的时候，天光正好落在肩上。",
+      "songs": [
+        { "cid": "125042", "name": "Sanctuary Inside", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "125043", "name": "Heavenly Me", "artistes": ["AIYUE blessed : 理名"] },
+        { "cid": "125044", "name": "Heavenly Me (Instrumental)", "artistes": ["AIYUE blessed : 理名"] }
+      ]
+    },
+    "1014": {
+      "cid": "1014",
+      "name": "月明人间",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260924/e5e0325a016972b56f74de5554e814a2.png",
+      "artistes": ["塞壬唱片-MSR"],
+      "intro": "月色照过山河，也照过每一盏还没熄的窗。",
+      "songs": [
+        { "cid": "7794552", "name": "月明人间", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "7794553", "name": "月明人间 (Instrumental)", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "7794554", "name": "照夜", "artistes": ["塞壬唱片-MSR"] }
+      ]
+    },
+    "8922": {
+      "cid": "8922",
+      "name": "雪山降临1101 OST",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20251104/920dbf50e9d1e90042d20b25345413d7.jpg",
+      "artistes": ["塞壬唱片-MSR"],
+      "intro": "风雪压下来的时候，脚步声反而更清楚了。",
+      "songs": [
+        { "cid": "125050", "name": "The Proclamation", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "125051", "name": "Beneath The Cloudless Sky", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "125052", "name": "Cold Front", "artistes": ["塞壬唱片-MSR"] }
+      ]
+    },
+    "9369": {
+      "cid": "9369",
+      "name": "时间啊，向前！",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20261102/a0f25b1287570bfe96872019183b8edd.jpg",
+      "artistes": ["塞壬唱片-MSR"],
+      "intro": "它从不回头，所以我们也只能一边回头一边往前走。",
+      "songs": [
+        { "cid": "125060", "name": "时间啊，向前！", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "125061", "name": "时间啊，向前！(Instrumental)", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "125062", "name": "旧日回声", "artistes": ["塞壬唱片-MSR"] }
+      ]
+    },
+    "0239": {
+      "cid": "0239",
+      "name": "明日方舟OST5",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20250415/3ce2647bd143f6d49cf58a483e6c9aa8.png",
+      "artistes": ["塞壬唱片-MSR"],
+      "intro": "第五张原声集，收录了那些走过又没能留下的地方。",
+      "songs": [
+        { "cid": "125070", "name": "A Cold Call", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "125071", "name": "Ständchen", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "125072", "name": "Whistle Stop", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "125073", "name": "Field in the Light", "artistes": ["塞壬唱片-MSR"] }
+      ]
+    },
+    "6667": {
+      "cid": "6667",
+      "name": "吾导先路OST",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20230214/69f3a366cbaefe00bb779c993a8a24c9.jpg",
+      "artistes": ["塞壬唱片-MSR"],
+      "intro": "为后来者探路的人，通常看不到路修好的那一天。",
+      "songs": [
+        { "cid": "125083", "name": "殉道之人", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "125084", "name": "The Last March", "artistes": ["塞壬唱片-MSR"] },
+        { "cid": "125085", "name": "先路", "artistes": ["塞壬唱片-MSR"] }
+      ]
+    }
+  },
+  "songs": []
+}
