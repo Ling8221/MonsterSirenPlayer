@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Copy, Minus, Square, X } from "lucide-react";
+import { useUiStore } from "@/store/useUiStore";
 import { useWindowStore } from "@/store/useWindowStore";
 
 interface WindowControlsProps {
@@ -13,7 +14,7 @@ export function WindowControls({ className = "" }: WindowControlsProps) {
   const maximized = useWindowStore((state) => state.maximized);
   const minimize = useWindowStore((state) => state.minimize);
   const toggleMaximize = useWindowStore((state) => state.toggleMaximize);
-  const close = useWindowStore((state) => state.close);
+  const openCloseDialog = useUiStore((state) => state.openCloseDialog);
 
   useEffect(() => {
     init();
@@ -51,8 +52,9 @@ export function WindowControls({ className = "" }: WindowControlsProps) {
         className="window-btn window-btn-close"
         title="关闭"
         aria-label="关闭"
+        aria-haspopup="dialog"
         disabled={!supported}
-        onClick={close}
+        onClick={openCloseDialog}
       >
         <X size={16} />
       </button>

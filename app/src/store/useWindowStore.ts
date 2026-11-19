@@ -8,6 +8,7 @@ interface WindowState {
   init: () => void;
   minimize: () => void;
   toggleMaximize: () => void;
+  hide: () => void;
   close: () => void;
 }
 
@@ -62,6 +63,12 @@ export const useWindowStore = create<WindowState>((set, get) => ({
     set({ maximized: !get().maximized });
     void getWindow()
       .then((win) => win?.toggleMaximize())
+      .catch(() => {});
+  },
+
+  hide: () => {
+    void getWindow()
+      .then((win) => win?.hide())
       .catch(() => {});
   },
 

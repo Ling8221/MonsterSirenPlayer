@@ -37,15 +37,17 @@ export function QueuePanel({ variant = "popup" }: { variant?: "popup" | "drawer"
           播放队列
         </span>
         <span className="queue-count">{queue.length} 首</span>
-        {queue.length > 0 ? (
-          <button
-            type="button"
-            className="text-btn queue-clear"
-            onClick={() => usePlaybackStore.getState().clear()}
-          >
-            清空
-          </button>
-        ) : null}
+        <div className="queue-head-actions">
+          {queue.length > 0 ? (
+            <button
+              type="button"
+              className="text-btn queue-clear"
+              onClick={() => usePlaybackStore.getState().clear()}
+            >
+              清空
+            </button>
+          ) : null}
+        </div>
       </header>
 
       <div className="queue-list">

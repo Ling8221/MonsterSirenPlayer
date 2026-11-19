@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { ChevronDown, Disc3, ListMusic, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ChevronDown, Disc3, ListMusic } from "lucide-react";
 import { Cover } from "@/components/Cover";
 import { WindowControls } from "@/components/WindowControls";
 import { joinArtists } from "@/lib/format";
@@ -26,15 +26,38 @@ export function NowPlaying() {
   );
   const wide = useMediaQuery("(min-width: 960px)");
   const [showLyrics, setShowLyrics] = useState(false);
+  const [visible, setVisible] = useState(open);
+  const [closing, setClosing] = useState(false);
+  const queueWrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!open) {
+    if (open) {
+      setVisible(true);
+      setClosing(false);
+      return;
+    }
+    if (!visible) return;
+    setClosing(true);
+    const timer = window.setTimeout(() => {
+      setVisible(false);
+      setClosing(false);
       setShowLyrics(false);
       setQueueOpen(false);
-    }
-  }, [open, setQueueOpen]);
+    }, 280);
+    return () => window.clearTimeout(timer);
+  }, [open, visible, setQueueOpen]);
 
-  if (!open) return null;
+  useEffect(() => {
+    if (!queueOpen) return;
+    const handlePointerDown = (event: PointerEvent): void => {
+      if (queueWrapRef.current?.contains(event.target as Node)) return;
+      setQueueOpen(false);
+    };
+    window.addEventListener("pointerdown", handlePointerDown, true);
+    return () => window.removeEventListener("pointerdown", handlePointerDown, true);
+  }, [queueOpen, setQueueOpen]);
+
+  if (!visible) return null;
 
   const coverPane = !wide && showLyrics ? null : (
     <div
@@ -79,7 +102,7 @@ export function NowPlaying() {
   );
 
   return (
-    <section className="now-playing" aria-label="正在播放">
+    <section className={`now-playing${closing ? " is-closing" : ""}`} aria-label="正在播放">
       <div
         className="np-backdrop"
         style={album?.coverUrl ? { backgroundImage: `url("${album.coverUrl}")` } : undefined}
@@ -126,37 +149,29 @@ export function NowPlaying() {
           <TransportControls variant="immersive" />
 
           <div className="np-extra">
-            <button
-              type="button"
-              className={`icon-btn${queueOpen ? " is-active" : ""}`}
-              onClick={() => setQueueOpen(!queueOpen)}
-              title="播放队列"
-              aria-label="播放队列"
-              aria-expanded={queueOpen}
-            >
-              <ListMusic size={19} />
-            </button>
+            <div className="queue-wrap" ref={queueWrapRef}>
+              <button
+                type="button"
+                className={`icon-btn${queueOpen ? " is-active" : ""}`}
+                onClick={() => setQueueOpen(!queueOpen)}
+                title="播放队列"
+                aria-label="播放队列"
+                aria-expanded={queueOpen}
+              >
+                <ListMusic size={19} />
+              </button>
+              {queueOpen ? (
+                <div className="queue-popover np-queue-popover">
+                  <QueuePanel variant="popup" />
+                </div>
+              ) : null}
+            </div>
             <div className="np-volume">
               <VolumeControl />
             </div>
           </div>
         </div>
       </div>
-
-      {queueOpen ? (
-        <aside className="np-queue-drawer" aria-label="播放队列">
-          <button
-            type="button"
-            className="icon-btn np-queue-close"
-            onClick={() => setQueueOpen(false)}
-            title="关闭队列"
-            aria-label="关闭队列"
-          >
-            <X size={18} />
-          </button>
-          <QueuePanel variant="drawer" />
-        </aside>
-      ) : null}
     </section>
   );
 }

@@ -17,7 +17,7 @@ echo [build.cmd] Visual Studio: %VSPATH%
 call "%VSPATH%\VC\Auxiliary\Build\vcvars64.bat" >nul
 if errorlevel 1 goto :novs
 
-call npm run tauri build
+call npm run tauri build -- --no-bundle
 set "CODE=%ERRORLEVEL%"
 popd
 exit /b %CODE%

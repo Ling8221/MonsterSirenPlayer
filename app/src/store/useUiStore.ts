@@ -40,6 +40,7 @@ interface UiState {
   nowPlayingQueueOpen: boolean;
   sidebarOpen: boolean;
   dialog: DialogState | null;
+  closeDialogOpen: boolean;
 
   navigate: (view: ViewSpec) => void;
   back: () => boolean;
@@ -52,6 +53,8 @@ interface UiState {
   setSidebarOpen: (open: boolean) => void;
   openDialog: (dialog: DialogState) => void;
   closeDialog: () => void;
+  openCloseDialog: () => void;
+  closeCloseDialog: () => void;
 }
 
 export const useUiStore = create<UiState>((set, get) => ({
@@ -63,6 +66,7 @@ export const useUiStore = create<UiState>((set, get) => ({
   nowPlayingQueueOpen: false,
   sidebarOpen: false,
   dialog: null,
+  closeDialogOpen: false,
 
   navigate: (view) => {
     const { view: current, history } = get();
@@ -97,4 +101,6 @@ export const useUiStore = create<UiState>((set, get) => ({
   setSidebarOpen: (open) => set({ sidebarOpen: open }),
   openDialog: (dialog) => set({ dialog, queueOpen: false }),
   closeDialog: () => set({ dialog: null }),
+  openCloseDialog: () => set({ closeDialogOpen: true }),
+  closeCloseDialog: () => set({ closeDialogOpen: false }),
 }));

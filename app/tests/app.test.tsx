@@ -6,6 +6,7 @@ import { createRoot, type Root } from "react-dom/client";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import App from "@/App";
 import { useSettingsStore } from "@/store/useSettingsStore";
+import { useUiStore } from "@/store/useUiStore";
 
 const library = JSON.parse(
   readFileSync(resolve(__dirname, "../public/mock/library.json"), "utf8"),
@@ -140,7 +141,7 @@ describe("应用冒烟测试", () => {
     expect(container.querySelector(".volume-tooltip")).toBeNull();
   });
 
-  it("沉浸式播放页显示歌词与队列抽屉", async () => {
+  it("沉浸式播放页显示歌词与队列浮层", async () => {
     const coverButton = container.querySelector(".player-cover-btn") as HTMLButtonElement;
     expect(coverButton).toBeTruthy();
 
@@ -170,14 +171,20 @@ describe("应用冒烟测试", () => {
     });
     await flush();
 
-    expect(container.querySelector(".np-queue-drawer")).not.toBeNull();
-    expect(container.querySelectorAll(".np-queue-drawer .queue-item").length).toBeGreaterThan(0);
+    expect(container.querySelector(".np-queue-popover")).not.toBeNull();
+    expect(container.querySelectorAll(".np-queue-popover .queue-item").length).toBeGreaterThan(0);
+    const queueActions = container.querySelector(".np-queue-popover .queue-head-actions");
+    expect(queueActions?.querySelector(".queue-clear")).not.toBeNull();
+    expect(container.querySelector(".np-queue-drawer")).toBeNull();
 
-    // 关闭沉浸式页，避免影响后续用例（收起按钮在左下角）
+    // 关闭沉浸式页，等待收回动画结束后卸载（避免影响后续用例）
     const closeButton = container.querySelector(".np-collapse") as HTMLButtonElement;
     expect(closeButton).toBeTruthy();
     await act(async () => {
       closeButton.click();
+    });
+    await act(async () => {
+      await new Promise((resolveTick) => setTimeout(resolveTick, 320));
     });
     await flush();
     expect(container.querySelector(".now-playing")).toBeNull();
@@ -361,7 +368,7 @@ describe("应用冒烟测试", () => {
     expect(document.documentElement.style.getPropertyValue("zoom")).toBe("1");
 
     // 关闭行为
-    expect(container.textContent).toContain("关闭窗口时");
+    expect(container.textContent).toContain("关闭窗口默认行为");
     const exitBehavior = [...container.querySelectorAll(".segmented-item")].find(
       (button) => button.textContent?.trim() === "退出程序",
     ) as HTMLButtonElement;
@@ -436,6 +443,31 @@ describe("应用冒烟测试", () => {
     expect(container.textContent).not.toContain("数据目录");
     expect(container.textContent).not.toContain("打开 config 目录");
     expect(container.textContent).not.toContain("设置保存在");
+  });
+
+  it("关闭窗口弹窗可以选择关闭行为", async () => {
+    await act(async () => {
+      useUiStore.getState().openCloseDialog();
+    });
+    await flush();
+
+    expect(document.body.textContent).toContain("关闭窗口后要做什么");
+    const options = document.querySelectorAll(".close-option input");
+    expect(options.length).toBe(2);
+
+    await act(async () => {
+      (options[1] as HTMLInputElement).click();
+    });
+    const confirm = [...document.querySelectorAll(".modal-footer .btn")].find(
+      (button) => button.textContent?.trim() === "确定",
+    ) as HTMLButtonElement;
+    await act(async () => {
+      confirm.click();
+    });
+    await flush();
+
+    expect(useSettingsStore.getState().closeBehavior).toBe("tray");
+    expect(document.querySelector(".modal")).toBeNull();
   });
 
   it("搜索页可以按关键字过滤", async () => {

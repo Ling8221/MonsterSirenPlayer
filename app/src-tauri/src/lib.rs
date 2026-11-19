@@ -139,6 +139,7 @@ pub fn run() {
             list_system_fonts,
             app_version,
             tray::set_close_behavior,
+            tray::exit_app,
         ])
         .run(tauri::generate_context!());
 

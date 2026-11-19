@@ -4,7 +4,7 @@ import type {
   DragEvent as ReactDragEvent,
   PointerEvent as ReactPointerEvent,
 } from "react";
-import { GripVertical, MoreHorizontal, Pause, Play, X } from "lucide-react";
+import { GripVertical, MoreHorizontal, Play, X } from "lucide-react";
 import type { Album, Song } from "@/api/types";
 import { joinArtists } from "@/lib/format";
 
@@ -135,9 +135,11 @@ export function SongRow({
         ) : (
           <span className="song-index-number">{index + 1}</span>
         )}
-        <span className="song-index-play" aria-hidden="true">
-          {playing && !paused ? <Pause size={14} /> : <Play size={14} />}
-        </span>
+        {!playing || paused ? (
+          <span className="song-index-play" aria-hidden="true">
+            <Play size={14} />
+          </span>
+        ) : null}
       </div>
 
       <div className="song-main">

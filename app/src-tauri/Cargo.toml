@@ -1,6 +1,6 @@
 [package]
 name = "monster-siren"
-version = "1.0.0"
+version = "1.1.0"
 description = "Monster Siren Records desktop player"
 authors = ["MonsterSirenPlayer"]
 edition = "2021"

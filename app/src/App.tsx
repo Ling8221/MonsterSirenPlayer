@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { TitleBar } from "@/features/titlebar/TitleBar";
+import { CloseDialog } from "@/features/titlebar/CloseDialog";
 import { Sidebar } from "@/features/sidebar/Sidebar";
 import { HomeView } from "@/features/home/HomeView";
 import { SearchView } from "@/features/search/SearchView";
@@ -112,6 +113,7 @@ export default function App() {
       <NowPlaying />
       <SongContextMenu />
       <DialogHost />
+      <CloseDialog />
       <Toasts />
     </div>
   );

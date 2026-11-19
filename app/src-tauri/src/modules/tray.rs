@@ -103,3 +103,9 @@ pub fn set_close_behavior(behavior: String) {
     }
     CLOSE_TO_TRAY.store(behavior != "exit", Ordering::Relaxed);
 }
+
+#[tauri::command]
+pub fn exit_app(app: tauri::AppHandle) {
+    EXIT_REQUESTED.store(true, Ordering::Relaxed);
+    app.exit(0);
+}

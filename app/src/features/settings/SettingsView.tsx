@@ -604,10 +604,10 @@ export function SettingsView() {
 
               <div className="setting-row">
                 <div className="setting-label">
-                  <span>关闭窗口时</span>
-                  <small>最小化到托盘继续播放，或直接退出程序</small>
+                  <span>关闭窗口默认行为</span>
+                  <small>点击关闭按钮时，弹窗默认选中这一项</small>
                 </div>
-                <div className="segmented" role="group" aria-label="关闭窗口时">
+                <div className="segmented" role="group" aria-label="关闭窗口默认行为">
                   <button
                     type="button"
                     className={`segmented-item${closeBehavior === "tray" ? " active" : ""}`}
@@ -923,7 +923,7 @@ export function SettingsView() {
               <dl className="about-grid">
                 <div>
                   <dt>版本</dt>
-                  <dd>v{appVersion.replace(/\.0$/, "")}</dd>
+                  <dd>v{appVersion}</dd>
                 </div>
                 <div>
                   <dt>技术栈</dt>
